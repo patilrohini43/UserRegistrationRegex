@@ -2,14 +2,16 @@
 
 echo "User Registration"
 
-read -p "Enter User First Name" firstName
-read -p "Enter User Last Name" lastName
-read -p "Enter Email Id" email
-read -p "Enter Mobile Number " mobNumber
+#read -p "Enter User First Name" firstName
+#read -p "Enter User Last Name" lastName
+#read -p "Enter Email Id" email
+#read -p "Enter Mobile Number " mobNumber
+read -p "Enter Password" password
 
 pat=^[A-Z]{1}[a-z]{2}[a-z]*$
 emailPat=^abc\.[xyz?]+@bl\.co\.[in?]
 mobilePat=^91\-[0-9]{10}$
+rule1=[a-zA-Z]{8,}
 
 if [[ $firstName =~ $pat ]] && [[ $lastName =~ $pat ]]
 then
@@ -24,6 +26,14 @@ then
 else
 	echo "Invalid Mobile Number"
 fi
+
+if [[ $password =~ $rule1 ]]
+then
+	echo "Valid Password"
+else
+	echo "Invalid Password"
+fi
+
 
 abc=0
 dot=0
