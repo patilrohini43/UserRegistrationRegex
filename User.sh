@@ -16,12 +16,20 @@ else
 	echo "Invalid Name Please Enter First Char only Upper Case"
 fi
 
-abc=0
-dot=0
-xyz=0
-bl=0
-co=0
-in=0
+#abc=0
+#dot=0
+#xyz=0
+#bl=0
+#co=0
+#in=0
+
+if [[ $email =~ $emailpat ]]
+then
+	echo "Valid"
+else
+	echo "Invalid"
+fi
+
 
 if [[ $email =~ ^abc ]]
 then
