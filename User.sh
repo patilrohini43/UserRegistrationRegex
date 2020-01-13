@@ -2,26 +2,26 @@
 
 echo "User Registration"
 
-#read -p "Enter User First Name" firstName
-#read -p "Enter User Last Name" lastName
-#read -p "Enter Email Id" email
-#read -p "Enter Mobile Number " mobNumber
+read -p "Enter User First Name" firstName
+read -p "Enter User Last Name" lastName
+read -p "Enter Email Id" email
+read -p "Enter Mobile Number " mobNumber
 read -p "Enter Password" password
 
-pat=^[A-Z]{1}[a-z]{2}[a-z]*$
-emailPat=^abc\.[xyz?]+@bl\.co\.[in?]
-mobilePat=^91\-[0-9]{10}$
+namePat="^[A-Z]{1}[a-z]{2}[a-z]*$"
+emailPat="^abc\.[xyz?]+@bl\.co\.[in?]"
+mobilePat="^91\-[0-9]{10}$"
 #rule1=[a-zA-Z]{8,}
 #rule2=[A-Z]{1}
 #rule3=[0-9]{1}
-rule4=[\@\[#\^]
+#rule4=[\@\[#\^]
 pat="^([0-9]+[A-Z]+[a-z]+[#$%^&*]+)"
 
 
 ### FirstName ###
-if [[ $firstName =~ $pat ]] && [[ $lastName =~ $pat ]]
+if [[ $firstName =~ $namePat ]] && [[ $lastName =~ $namePat ]]
 then
-	echo "Good Name"
+	echo "Valid Name"
 else
 	echo "Invalid Name Please Enter First Char only Upper Case"
 fi
@@ -32,6 +32,14 @@ then
 	echo "Valid Mobile Number"
 else
 	echo "Invalid Mobile Number"
+fi
+
+### Email Format ###
+if [[ $email =~ $emailPat ]]
+then
+	echo "Valid"
+else
+	echo "Invalid Email"
 fi
 
 ### Password ###
