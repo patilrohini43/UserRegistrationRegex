@@ -17,6 +17,8 @@ mobilePat=^91\-[0-9]{10}$
 rule4=[\@\[#\^]
 pat="^([0-9]+[A-Z]+[a-z]+[#$%^&*]+)"
 
+
+### FirstName ###
 if [[ $firstName =~ $pat ]] && [[ $lastName =~ $pat ]]
 then
 	echo "Good Name"
@@ -24,6 +26,7 @@ else
 	echo "Invalid Name Please Enter First Char only Upper Case"
 fi
 
+### Mobile Format ####
 if [[ $mobNumber =~ $mobilePat ]]
 then
 	echo "Valid Mobile Number"
@@ -31,7 +34,17 @@ else
 	echo "Invalid Mobile Number"
 fi
 
-if [[ $password =~ $pat ]]
+### Password ###
+passwordLen=0
+if [[ ${#password} -ge 8 ]]
+then
+	passwordLen=1
+fi
+
+if [[ $passwordLen -eq 0 ]]
+then
+	echo "Minimum length 8 required"
+elif [[ $password =~ $pat ]]
 then
 	echo "Valid Password"
 else
