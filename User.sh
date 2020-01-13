@@ -12,7 +12,8 @@ pat=^[A-Z]{1}[a-z]{2}[a-z]*$
 emailPat=^abc\.[xyz?]+@bl\.co\.[in?]
 mobilePat=^91\-[0-9]{10}$
 #rule1=[a-zA-Z]{8,}
-rule2=[A-Z]{1}
+#rule2=[A-Z]{1}
+rule3=[0-9]{1}
 
 if [[ $firstName =~ $pat ]] && [[ $lastName =~ $pat ]]
 then
@@ -28,7 +29,7 @@ else
 	echo "Invalid Mobile Number"
 fi
 
-if [[ $password =~ $rule2 ]]
+if [[ $password =~ $rule3 ]]
 then
 	echo "Valid Password"
 else
