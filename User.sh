@@ -5,15 +5,24 @@ echo "User Registration"
 read -p "Enter User First Name" firstName
 read -p "Enter User Last Name" lastName
 read -p "Enter Email Id" email
+read -p "Enter Mobile Number " mobNumber
 
 pat=^[A-Z]{1}[a-z]{2}[a-z]*$
-emailpat=^abc\.[xyz?]+@bl\.co\.[in?]
+emailPat=^abc\.[xyz?]+@bl\.co\.[in?]
+mobilePat=^91\-[0-9]{10}$
 
 if [[ $firstName =~ $pat ]] && [[ $lastName =~ $pat ]]
 then
 	echo "Good Name"
 else
 	echo "Invalid Name Please Enter First Char only Upper Case"
+fi
+
+if [[ $mobNumber =~ $mobilePat ]]
+then
+	echo "Valid Mobile Number"
+else
+	echo "Invalid Mobile Number"
 fi
 
 abc=0
