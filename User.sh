@@ -4,12 +4,14 @@ echo "User Registration"
 
 #read -p "Enter User First Name" firstName
 #read -p "Enter User Last Name" lastName
-#read -p "Enter Email Id" email
+read -p "Enter Email Id" email
 #read -p "Enter Mobile Number " mobNumber
-read -p "Enter Password" password
+#read -p "Enter Password" password
 
 pat=^[A-Z]{1}[a-z]{2}[a-z]*$
 emailPat=^abc\.[xyz?]+@bl\.co\.[in?]
+emailpattern=^abc[.-[0-9]+@[a-z]+\.(com|net)]
+
 mobilePat=^91\-[0-9]{10}$
 #rule1=[a-zA-Z]{8,}
 #rule2=[A-Z]{1}
